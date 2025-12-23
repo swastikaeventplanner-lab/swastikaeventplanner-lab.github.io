@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swastika Caterers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            goldlight: '#F4CF57',
+                            dark: '#050505',
+                            card: '#111111',
+                            gray: '#888888'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1.5s ease-out',
+                        'slide-up': 'slideUp 1s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="font-sans text-gray-200 antialiased bg-brand-dark selection:bg-brand-gold selection:text-black">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 transition-all duration-300 bg-brand-dark/95 backdrop-blur-md shadow-2xl border-b border-white/5">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center py-3">
+            <!-- Logo Section -->
+            <a class="flex items-center gap-4 group" href="#">
+                <div
+                    class="h-16 w-16 md:h-20 md:w-20 overflow-hidden rounded-lg bg-black flex items-center justify-center border border-brand-gold/20 shadow-[0_0_15px_rgba(212,175,55,0.1)] group-hover:border-brand-gold/50 transition-colors">
+                    <!-- Using the uploaded logo -->
+                    <img alt="Swastika Caterers Logo" class="h-full w-full object-contain p-1"
+                        src="Images/2_files/unnamed(23).jpg"
+                        go-data-src="/gen?prompt=logo+placeholder&amp;context_image_idx=0">
+                </div>
+                <div class="flex flex-col">
+                    <span
+                        class="text-2xl md:text-3xl font-serif font-bold text-white tracking-wide group-hover:text-brand-gold transition-colors">SWASTIKA</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-[0.3em] text-brand-gold">Caterers since
+                        2000</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex space-x-10 items-center">
+                <a class="text-gray-300 hover:text-brand-gold transition-colors uppercase text-xs tracking-widest font-bold relative group py-2"
+                    href="#about">
+                    About
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="text-gray-300 hover:text-brand-gold transition-colors uppercase text-xs tracking-widest font-bold relative group py-2"
+                    href="#menu">
+                    Cuisines
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="text-gray-300 hover:text-brand-gold transition-colors uppercase text-xs tracking-widest font-bold relative group py-2"
+                    href="#services">
+                    Services
+                </a>
+                <a class="bg-transparent border border-brand-gold text-brand-gold px-6 py-2 rounded-none font-bold uppercase text-xs tracking-wider hover:bg-brand-gold hover:text-black transition-all transform hover:-translate-y-1 shadow-[0_0_10px_rgba(212,175,55,0.2)]"
+                    href="#contact">
+                    Contact Us
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden text-white hover:text-brand-gold transition-colors"
+                onclick="document.getElementById(&#39;mobile-menu&#39;).classList.toggle(&#39;hidden&#39;)">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden absolute top-full left-0 w-full bg-brand-dark border-t border-white/10 p-6 flex flex-col space-y-6 shadow-2xl"
+            id="mobile-menu">
+            <a class="text-white text-lg border-b border-gray-800 pb-2 hover:text-brand-gold" href="#about">About Us</a>
+            <a class="text-white text-lg border-b border-gray-800 pb-2 hover:text-brand-gold" href="#menu">Cuisines</a>
+            <a class="text-white text-lg border-b border-gray-800 pb-2 hover:text-brand-gold"
+                href="#services">Services</a>
+            <a class="text-brand-gold font-bold uppercase tracking-widest" href="#contact">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden bg-brand-dark">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img alt="Luxury Catering Setup"
+                class="w-full h-full object-cover opacity-50 transform scale-105 animate-[pulse_10s_ease-in-out_infinite]"
+                src="Images/2_files/unnamed(36).jpg"
+                go-data-src="/gen?prompt=grand+luxury+indian+wedding+banquet+setup+at+night+with+flowers+golden+lights+and+rich+buffet+spread+photorealistic&amp;aspect=16:9">
+        </div>
+        <div class="absolute inset-0 hero-overlay z-10"></div>
+
+        <div class="relative z-20 text-center px-4 max-w-5xl mx-auto mt-16 animate-slide-up">
+            <div class="mb-6 inline-block">
+                <span
+                    class="py-2 px-6 border border-brand-gold/50 text-brand-gold text-xs uppercase tracking-[0.4em] bg-black/50 backdrop-blur-md">Est.
+                    2000</span>
+            </div>
+            <h1
+                class="text-5xl md:text-7xl lg:text-9xl font-serif font-bold text-white mb-6 leading-none tracking-tight drop-shadow-2xl">
+                Swastika <br><span class="gold-gradient-text">Caterers</span>
+            </h1>
+            <div class="w-32 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent mx-auto mb-8"></div>
+            <p class="text-xl md:text-3xl text-gray-200 font-light italic mb-12 font-serif tracking-wide">
+                "Your Programs and our Arrangements"
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a class="px-10 py-4 bg-brand-gold text-brand-dark font-bold uppercase tracking-widest text-sm hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(212,175,55,0.4)]"
+                    href="#menu">
+                    Explore Menu
+                </a>
+                <a class="px-10 py-4 border border-white/30 text-white font-bold uppercase tracking-widest text-sm hover:border-brand-gold hover:text-brand-gold transition-all duration-300 backdrop-blur-sm"
+                    href="#contact">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Legacy / About Section -->
+    <section class="py-24 relative overflow-hidden bg-brand-dark" id="about">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-20">
+                <!-- Image Side -->
+                <div class="lg:w-1/2 relative group">
+                    <div
+                        class="absolute -top-4 -left-4 w-full h-full border border-brand-gold/30 z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2">
+                    </div>
+                    <div class="relative z-10 overflow-hidden">
+                        <img alt="Our Chefs"
+                            class="w-full object-cover h-[500px] transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0"
+                            src="Images/2_files/unnamed(24).jpg"
+                            go-data-src="/gen?prompt=warm+portrait+of+experienced+indian+chefs+plating+gourmet+dishes+in+commercial+kitchen+cinematic+lighting&amp;aspect=4:3">
+                    </div>
+                    <div
+                        class="absolute -bottom-6 -right-6 bg-black p-8 shadow-[0_10px_30px_rgba(0,0,0,0.8)] border border-brand-gold/30 z-20">
+                        <p class="font-serif text-6xl text-brand-gold font-bold mb-0 leading-none">25</p>
+                        <p class="text-white uppercase text-xs tracking-[0.3em] mt-2">Years of<br>Legacy</p>
+                    </div>
+                </div>
+
+                <!-- Text Side -->
+                <div class="lg:w-1/2">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-[1px] w-16 bg-brand-gold"></div>
+                        <h2 class="text-brand-gold uppercase tracking-[0.3em] text-xs font-bold">Who We Are</h2>
+                    </div>
+                    <h3 class="text-4xl md:text-5xl font-serif font-bold text-white mb-8 leading-tight">Crafting
+                        Memories <br><span class="italic text-gray-500">Since 2000</span></h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed text-lg font-light">
+                        <strong>Swastika Caterers</strong> stands as a pillar of culinary excellence. For over two
+                        decades, we have transformed ordinary gatherings into majestic celebrations through the art of
+                        food.
+                    </p>
+                    <p class="text-gray-400 mb-10 leading-relaxed text-lg font-light">
+                        Whether it's a traditional Indian wedding rooted in Vedic customs or a modern corporate gala
+                        requiring precision and style, our arrangements speak the language of luxury and hospitality.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-white/10 pt-8">
+                        <div class="flex gap-5 items-start">
+                            <span class="material-symbols-outlined text-4xl text-brand-gold font-thin">verified</span>
+                            <div>
+                                <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-2">Authentic Taste
+                                </h4>
+                                <p class="text-sm text-gray-500">Traditional recipes passed down through generations.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5 items-start">
+                            <span
+                                class="material-symbols-outlined text-4xl text-brand-gold font-thin">manage_accounts</span>
+                            <div>
+                                <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-2">Impeccable
+                                    Service</h4>
+                                <p class="text-sm text-gray-500">Highly trained, uniformed staff for a premium
+                                    experience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cuisine Showcase Section -->
+    <section class="py-24 bg-brand-card text-white relative border-y border-white/5" id="menu">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="text-brand-gold uppercase tracking-[0.3em] text-xs font-bold mb-4 block">A World of
+                    Flavors</span>
+                <h3 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Our Culinary Collections</h3>
+                <div class="w-24 h-0.5 bg-brand-gold mx-auto opacity-50"></div>
+            </div>
+
+            <!-- Cuisine Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div class="group relative h-96 overflow-hidden cursor-pointer border border-white/5 bg-black">
+                    <img alt="North Indian"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                        src="Images/2_files/unnamed(25).jpg"
+                        go-data-src="/gen?prompt=royal+north+indian+thali+feast+with+curries+and+breads+on+golden+table&amp;aspect=4:3">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h4
+                            class="text-3xl font-serif font-bold text-white mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            North Indian</h4>
+                        <div class="h-[1px] w-12 group-hover:w-full bg-brand-gold transition-all duration-700 mb-3">
+                        </div>
+                        <p
+                            class="text-gray-400 text-sm font-light tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            Rich gravies, aromatic biryanis, and tandoori breads.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="group relative h-96 overflow-hidden cursor-pointer border border-white/5 bg-black">
+                    <img alt="South Indian"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                        src="Images/2_files/unnamed(29).jpg"
+                        go-data-src="/gen?prompt=traditional+south+indian+banana+leaf+meal+sadhya+feast&amp;aspect=4:3">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h4
+                            class="text-3xl font-serif font-bold text-white mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            South Indian</h4>
+                        <div class="h-[1px] w-12 group-hover:w-full bg-brand-gold transition-all duration-700 mb-3">
+                        </div>
+                        <p
+                            class="text-gray-400 text-sm font-light tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            Authentic Sadhyas, crispy dosas, and coconut-based curries.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="group relative h-96 overflow-hidden cursor-pointer border border-white/5 bg-black">
+                    <img alt="Punjabi"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                        src="Images/2_files/unnamed(31).jpg"
+                        go-data-src="/gen?prompt=vibrant+punjabi+food+spread+sarson+ka+saag+makki+di+roti+lassi+glass+copper+vessels&amp;aspect=4:3">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h4
+                            class="text-3xl font-serif font-bold text-white mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            Punjabi</h4>
+                        <div class="h-[1px] w-12 group-hover:w-full bg-brand-gold transition-all duration-700 mb-3">
+                        </div>
+                        <p
+                            class="text-gray-400 text-sm font-light tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            Robust flavors, Amritsari Kulchas, and heavy lassis.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="group relative h-96 overflow-hidden cursor-pointer border border-white/5 bg-black">
+                    <img alt="Jain Menu"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                        src="Images/2_files/unnamed(28).jpg"
+                        go-data-src="/gen?prompt=pure+satvik+jain+vegetarian+thali+no+onion+no+garlic+fresh+and+healthy+indian+food&amp;aspect=4:3">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h4
+                            class="text-3xl font-serif font-bold text-white mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            Jain Menu</h4>
+                        <div class="h-[1px] w-12 group-hover:w-full bg-brand-gold transition-all duration-700 mb-3">
+                        </div>
+                        <p
+                            class="text-gray-400 text-sm font-light tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            Pure Satvik delicacies prepared without onion and garlic.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="group relative h-96 overflow-hidden cursor-pointer border border-white/5 bg-black">
+                    <img alt="Desserts"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                        src="Images/2_files/unnamed(26).jpg"
+                        go-data-src="/gen?prompt=assortment+of+luxury+indian+sweets+mithai+silver+vark+festive+display&amp;aspect=4:3">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h4
+                            class="text-3xl font-serif font-bold text-white mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            Mithai &amp; Sweets</h4>
+                        <div class="h-[1px] w-12 group-hover:w-full bg-brand-gold transition-all duration-700 mb-3">
+                        </div>
+                        <p
+                            class="text-gray-400 text-sm font-light tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            Traditional Jalebis, Rasmalai, and premium desserts.</p>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="group relative h-96 overflow-hidden cursor-pointer border border-white/5 bg-black">
+                    <img alt="Global"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                        src="Images/2_files/unnamed(32).jpg"
+                        go-data-src="/gen?prompt=international+cuisine+catering+counter+pasta+mexican+fusion+food+display&amp;aspect=4:3">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h4
+                            class="text-3xl font-serif font-bold text-white mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            Global Fusion</h4>
+                        <div class="h-[1px] w-12 group-hover:w-full bg-brand-gold transition-all duration-700 mb-3">
+                        </div>
+                        <p
+                            class="text-gray-400 text-sm font-light tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            Italian Pasta, Mexican, Chinese, and Live Counters.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20 text-center">
+                <p class="text-gray-400 mb-8 italic font-light tracking-wider">Explore our complete range of 500+ items
+                </p>
+                <a class="inline-flex items-center gap-4 border border-brand-gold text-brand-gold px-12 py-5 rounded-none font-bold uppercase tracking-[0.2em] text-xs hover:bg-brand-gold hover:text-black transition-all duration-300 group"
+                    href="https://drive.google.com/file/d/1mVOxbV4soBktpoa5pN_l7JFXvfXaKX54/view?usp=sharing"
+                    target="_blank">
+                    <span class="material-symbols-outlined group-hover:animate-bounce">menu_book</span>
+                    View Menu Catalogue
+                </a>
+                <p
+                    class="text-gray-500 mt-6 text-xs uppercase tracking-widest hover:text-brand-gold transition-colors cursor-default">
+                    For customizing menu please contact us</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-24 bg-brand-dark" id="services">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6">Our Services</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group relative overflow-hidden h-[30rem] cursor-pointer">
+                    <img alt="Weddings"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-50 group-hover:brightness-75"
+                        src="Images/2_files/unnamed(36).jpg"
+                        go-data-src="/gen?prompt=opulent+indian+wedding+mandap+setup+with+floral+decorations+and+seating+during+daytime&amp;aspect=3:4">
+                    <div
+                        class="absolute inset-0 border border-white/5 group-hover:border-brand-gold/50 transition-colors">
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black to-transparent">
+                        <div class="flex items-end justify-between border-b border-brand-gold/50 pb-4 mb-4">
+                            <h3 class="text-2xl font-serif text-white">Weddings</h3>
+                            <span class="material-symbols-outlined text-brand-gold text-3xl">diamond</span>
+                        </div>
+                        <p class="text-gray-300 text-sm font-light leading-relaxed">End-to-end catering and management
+                            for grand Indian weddings.</p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group relative overflow-hidden h-[30rem] cursor-pointer">
+                    <img alt="Corporate"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-50 group-hover:brightness-75"
+                        src="Images/2_files/unnamed(39).jpg"
+                        go-data-src="/gen?prompt=corporate+event+catering+buffet+setup+clean+modern+indoor+hotel+banquet+hall&amp;aspect=3:4">
+                    <div
+                        class="absolute inset-0 border border-white/5 group-hover:border-brand-gold/50 transition-colors">
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black to-transparent">
+                        <div class="flex items-end justify-between border-b border-brand-gold/50 pb-4 mb-4">
+                            <h3 class="text-2xl font-serif text-white">Corporate</h3>
+                            <span class="material-symbols-outlined text-brand-gold text-3xl">apartment</span>
+                        </div>
+                        <p class="text-gray-300 text-sm font-light leading-relaxed">Professional executive lunches,
+                            high-tea, and gala dinners.</p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group relative overflow-hidden h-[30rem] cursor-pointer">
+                    <img alt="Social"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-50 group-hover:brightness-75"
+                        src="Images/2_files/unnamed(34).jpg"
+                        go-data-src="/gen?prompt=happy+indian+family+party+birthday+celebration+with+cake+and+snacks+on+table&amp;aspect=3:4">
+                    <div
+                        class="absolute inset-0 border border-white/5 group-hover:border-brand-gold/50 transition-colors">
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black to-transparent">
+                        <div class="flex items-end justify-between border-b border-brand-gold/50 pb-4 mb-4">
+                            <h3 class="text-2xl font-serif text-white">Social Events</h3>
+                            <span class="material-symbols-outlined text-brand-gold text-3xl">celebration</span>
+                        </div>
+                        <p class="text-gray-300 text-sm font-light leading-relaxed">Intimate gatherings, anniversaries,
+                            and house-warming parties.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dedicated Contact Section -->
+    <section class="py-24 bg-brand-card relative border-t border-brand-gold/10" id="contact">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-gold uppercase tracking-[0.3em] text-xs font-bold mb-4">Get In Touch</h2>
+                <h3 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Contact Details</h3>
+                <p class="text-gray-400 max-w-xl mx-auto font-light">Reach out to us to plan your next event. We are
+                    available 7 days a week.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Phone Card -->
+                <a href="tel:+919826098362, +919179298362"
+                    class="group bg-black border border-white/10 p-10 flex flex-col items-center justify-center text-center hover:border-brand-gold transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                    <div
+                        class="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center mb-6 group-hover:bg-brand-gold group-hover:text-black text-brand-gold transition-colors duration-300">
+                        <span class="material-symbols-outlined text-3xl">call</span>
+                    </div>
+                    <h4 class="text-white font-serif text-2xl mb-4">Phone</h4>
+                    <p class="text-gray-400 font-mono group-hover:text-brand-gold transition-colors">+91 98260 98362</p>
+                    <p class="text-gray-500 font-mono text-sm mt-1">WhatsApp: +91 91792 98362</p>
+                </a>
+
+                <!-- Email Card -->
+                <a href="mailto: swastika.eventplanner@gmail.com"
+                    class="group bg-black border border-white/10 p-10 flex flex-col items-center justify-center text-center hover:border-brand-gold transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                    <div
+                        class="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center mb-6 group-hover:bg-brand-gold group-hover:text-black text-brand-gold transition-colors duration-300">
+                        <span class="material-symbols-outlined text-3xl">mail</span>
+                    </div>
+                    <h4 class="text-white font-serif text-2xl mb-4">Email</h4>
+                    <p class="text-gray-400 font-light group-hover:text-brand-gold transition-colors">
+                        swastika.eventplanner@gmail.com </p>
+                    <p class="text-gray-500 font-light text-sm mt-1"></p>
+                </a>
+
+                <!-- Instagram Card -->
+                <a href="#" target="_blank"
+                    class="group bg-black border border-white/10 p-10 flex flex-col items-center justify-center text-center hover:border-brand-gold transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                    <div
+                        class="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center mb-6 group-hover:bg-brand-gold group-hover:text-black text-brand-gold transition-colors duration-300">
+                        <!-- Instagram SVG Icon -->
+                        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h4 class="text-white font-serif text-2xl mb-4">Instagram</h4>
+                    <p class="text-gray-400 font-light group-hover:text-brand-gold transition-colors">@swastikkaevents
+                    </p>
+                    <p class="text-gray-500 font-light text-sm mt-1">Follow for latest updates</p>
+                </a>
+            </div>
+
+            <div class="text-center mt-12 text-gray-500 font-light">
+                <p>Office Address: 61, Agresen Nagar, Airport Road, Indore(452005)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16 border-t border-white/10">
+        <div class="container mx-auto px-6 flex flex-col items-center">
+            <!-- Footer Logo -->
+            <div
+                class="mb-6 h-16 w-16 opacity-80 flex justify-center items-center bg-brand-card rounded-full p-2 border border-white/10">
+                <img alt="Swastika Logo" class="w-full h-full object-contain" src="Images/2_files/unnamed(23).jpg"
+                    go-data-src="/gen?prompt=logo+placeholder&amp;context_image_idx=0">
+            </div>
+
+            <h2 class="text-2xl font-serif font-bold mb-3 tracking-wide text-brand-gold">SWASTIKA CATERERS</h2>
+            <p class="text-gray-400 italic font-serif mb-10 text-sm">"Your Programs and our Arrangements"</p>
+
+            <div class="flex flex-wrap justify-center gap-8 mb-10 uppercase text-xs tracking-widest text-gray-500">
+                <a class="hover:text-white transition-colors" href="#">Home</a>
+                <a class="hover:text-white transition-colors" href="#menu">Menu</a>
+                <a class="hover:text-white transition-colors" href="#about">About</a>
+                <a class="hover:text-white transition-colors" href="#contact">Contact</a>
+            </div>
+
+            <div class="w-full max-w-xs border-t border-white/5 my-8"></div>
+
+            <p class="text-gray-600 text-[10px] tracking-wider uppercase">© 2025 Swastika Caterers. All Rights Reserved.
+                Serving since 2000.</p>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+</html>
